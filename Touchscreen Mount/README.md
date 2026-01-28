@@ -17,3 +17,7 @@
 - Arm needs to be mirrored for the second one. 
 
 ![folded position](PivotReinforcement.png)
+
+## Altmill Aluminum Extrusion Issues
+
+The Altmill uses almost standard 45mm extrusions but I have yet to find any nuts that can be inserted from the front. To add M8 nuts in the extrusion you'll ether have to widen the slot in (preferbally in a hidden location like behind the mount) or dissamble one side of the front extrusion. 
