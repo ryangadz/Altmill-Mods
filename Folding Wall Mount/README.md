@@ -16,10 +16,10 @@ A secure, web-based industrial "pendant" interface for controlling a dual-motor 
 - **Security:** HTTP Basic Authentication and a 5-minute inactivity timeout.
 
 ## Hardware Required
-- **MCU:** [Lonely Binary ESP32-S3 Gold Edition](https://www.lonelybinary.com)
-- **Drivers:** 2x Stepper Drivers (e.g., A4988 or TMC2209)
-- **Motors:** 2x NEMA 17 (or similar)
-- **Buttons:** 3x Momentary Buttons (Up, Down, E-Stop)
+- **MCU:** [Lonely Binary ESP32-S3 Gold Edition](https://www.lonelybinary.com) - [Amazon](https://www.amazon.com/dp/B0FL149DGM?ref=fed_asin_title)
+- **Drivers:** 2x Stepper Drivers 1.0-4.2A 20-50VDC - [Amazon](https://www.amazon.com/dp/B06Y5VPSFN?ref=fed_asin_title)
+- **Motors:** 2x NEMA 23 (or similar) - [Amazon](https://www.amazon.com/dp/B091C37FJ2?ref=fed_asin_title)
+- **Buttons:** 3x Momentary Buttons (Up, Down, E-Stop) - [Amazon](https://www.amazon.com/gp/product/B07S9MCKX8?ref=ppx_pt2_dt_b_prod_image)
 
 ## Pinout Reference
 | Component | GPIO | Function |
