@@ -2,7 +2,7 @@
 #include <WebServer.h>
 #include <AccelStepper.h>
 #include <Adafruit_NeoPixel.h>
-#include "secrp0ets.h"
+#include "secrets.h"
 
 // --- Configuration ---
 const char* ssid     = SECRET_SSID;
@@ -77,17 +77,17 @@ void handleRoot() {
   html += "  fetch('/status').then(r => r.json()).then(data => {";
   html += "    const b = document.getElementById('stat'); b.innerText = data.text; b.style.borderColor = data.color; b.style.color = data.color;";
   html += "    const t = document.getElementById('tog'); ";
-  html += "    if(data.stopped){ t.innerText='RESET'; t.className='toggle-reset'; } else { t.innerText='STOP'; t.className='toggle-stop'; }";
+  html += "    if(data.stopped){ t.innerText='RESET'; t.className='toggle-reset'; } else { t.innerText='E-STOP'; t.className='toggle-stop'; }";
   html += "    if(data.locked) location.reload();";
   html += "  });";
   html += "}, 800);";
   html += "</script></head><body>";
   
-  html += "<h3>Axis Control</h3>";
+  html += "<h3>Altmill Folding Wall Mount</h3>";
   html += "<div id='stat' class='status-box'>READY</div>";
   
   html += "<div class='center-stack'>";
-  html += "  <button id='tog' class='toggle-stop' onclick=\"toggleSys()\">STOP</button>";
+  html += "  <button id='tog' class='toggle-stop' onclick=\"toggleSys()\">E-STOP</button>";
   html += "  <button class='move-btn' onmousedown=\"startMove('up')\" onmouseup=\"stopMove()\" ontouchstart=\"startMove('up')\" ontouchend=\"stopMove()\">&#9650;</button>";
   html += "  <button class='move-btn' onmousedown=\"startMove('down')\" onmouseup=\"stopMove()\" ontouchstart=\"startMove('down')\" ontouchend=\"stopMove()\">&#9660;</button>";
   html += "  <button class='lock-btn' onclick=\"send('/lockout')\">LOCK</button>";
