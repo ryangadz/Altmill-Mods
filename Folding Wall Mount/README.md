@@ -2,7 +2,7 @@
 
 A secure, web-based industrial "pendant" interface for controlling a dual-motor axis using an ESP32-S3. This project features a responsive "Press-to-Run" UI, multi-color LED status feedback, and hardware safety interrupts.
 
-![Web Interface](/Altmill-Mods/Folding%20Wall%20Mount/Images/WebInterface.png)
+![Web Interface](/Images/WebInterface.png)
 
 ## Features
 - **Dual Motor Sync:** Steppers move in unison on dedicated pins to prevent hardware strain.
