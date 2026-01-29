@@ -2,7 +2,7 @@
 #include <WebServer.h>
 #include <AccelStepper.h>
 #include <Adafruit_NeoPixel.h>
-#include "secrets.h"
+#include "secrp0ets.h"
 
 // --- Configuration ---
 const char* ssid     = SECRET_SSID;
