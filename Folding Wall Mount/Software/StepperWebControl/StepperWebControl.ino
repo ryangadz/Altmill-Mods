@@ -15,13 +15,15 @@ const unsigned long SESSION_TIMEOUT = 300000;
 unsigned long lastActivity = 0;
 bool isLocked = true;
 
-#define M1_STEP 4
-#define M1_DIR  5
-#define M2_STEP 6
-#define M2_DIR  7
-#define BTN_UP    1
-#define BTN_DOWN  2
-#define BTN_ESTOP 15
+#define M1_STEP 5
+#define M1_DIR  6
+#define M1_ENA 7
+#define M2_STEP 8
+#define M2_DIR  9
+#define M2_ENA 10
+#define BTN_UP    41
+#define BTN_DOWN  40
+#define BTN_ESTOP 42
 #define RGB_LED_PIN 48 
 
 AccelStepper stepper1(1, M1_STEP, M1_DIR);
@@ -158,7 +160,16 @@ void setup() {
 
 void loop() {
   server.handleClient();
-  if (digitalRead(BTN_ESTOP) == LOW) isStopped = true;
+  if (digitalRead(BTN_ESTOP) == HIGH) {
+    isStopped = true;
+    stepper1.disableOutputs(); 
+    stepper2.disableOutputs(); 
+  }
+    else {
+      isStopped = false;
+      stepper1.enableOutputs(); 
+      stepper2.enableOutputs(); 
+    }
 
   if (isStopped) {
     setStatusLED(255, 0, 0);
@@ -169,10 +180,10 @@ void loop() {
 
     if (moveUp) {
       setStatusLED(0, 0, 255);
-      stepper1.setSpeed(runSpeed); stepper2.setSpeed(runSpeed);
+      stepper1.setSpeed(-runSpeed); stepper2.setSpeed(-runSpeed);
     } else if (moveDown) {
       setStatusLED(255, 255, 0);
-      stepper1.setSpeed(-runSpeed); stepper2.setSpeed(-runSpeed);
+      stepper1.setSpeed(runSpeed); stepper2.setSpeed(runSpeed);
     } else {
       setStatusLED(0, 255, 0);
       stepper1.setSpeed(0); stepper2.setSpeed(0);

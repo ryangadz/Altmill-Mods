@@ -24,12 +24,12 @@ A secure, web-based industrial "pendant" interface for controlling a dual-motor 
 ## Pinout Reference
 | Component | GPIO | Function |
 | :--- | :--- | :--- |
-| **Motor 1 STEP** | 4 | Pulse Signal |
-| **Motor 1 DIR** | 5 | Direction Signal |
-| **Motor 2 STEP** | 6 | Pulse Signal |
-| **Motor 2 DIR** | 7 | Direction Signal |
-| **Button UP** | 1 | Physical Move Up |
-| **Button DOWN** | 2 | Physical Move Down |
+| **Motor 1 STEP** | 6 | Pulse Signal |
+| **Motor 1 DIR** | 7 | Direction Signal |
+| **Motor 2 STEP** | 8 | Pulse Signal |
+| **Motor 2 DIR** | 9 | Direction Signal |
+| **Button UP** | 13 | Physical Move Up |
+| **Button DOWN** | 14 | Physical Move Down |
 | **E-STOP** | 15 | System Kill Switch |
 | **Onboard LED** | 48 | WS2812 RGB |
 
